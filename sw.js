@@ -1,6 +1,10 @@
-const CACHE_NAME = 'quizzes-app-v1';
-const CORE_ASSETS = [
+const CACHE_NAME = 'vocab-quiz-cache-v1';
+const ASSETS = [
+  './',
   './index.html',
+  './patrimoine.html',
+  './sequence1.html',
+  './sequence2.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'
@@ -8,7 +12,7 @@ const CORE_ASSETS = [
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
   );
   self.skipWaiting();
 });
@@ -22,24 +26,18 @@ self.addEventListener('activate', (event) => {
   self.clients.claim();
 });
 
-// Cache-first for our own files, network-first fallback for everything else (e.g. Google Fonts).
 self.addEventListener('fetch', (event) => {
-  const url = new URL(event.request.url);
-  const isOwnFile = url.origin === self.location.origin;
-
-  if (isOwnFile) {
-    event.respondWith(
-      caches.match(event.request).then((cached) => {
-        return cached || fetch(event.request).then((resp) => {
-          const clone = resp.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-          return resp;
-        }).catch(() => cached);
-      })
-    );
-  } else {
-    event.respondWith(
-      fetch(event.request).catch(() => caches.match(event.request))
-    );
-  }
+  if (event.request.method !== 'GET') return;
+  event.respondWith(
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          return response;
+        })
+        .catch(() => caches.match('./index.html'));
+    })
+  );
 });
