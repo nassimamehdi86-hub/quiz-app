@@ -1,10 +1,8 @@
-const CACHE_NAME = 'vocab-quiz-cache-v1';
+const CACHE_NAME = 'english-vocab-cache-v1';
 const ASSETS = [
   './',
   './index.html',
-  './patrimoine.html',
   './sequence1.html',
-  './sequence2.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png'

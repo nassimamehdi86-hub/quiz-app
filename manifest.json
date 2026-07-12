@@ -1,12 +1,12 @@
 {
-  "name": "كويزات المفردات - Patrimoine, Tourisme, Histoire",
-  "short_name": "كويزات المفردات",
+  "name": "English Vocabulary - مفردات اللغة الإنجليزية",
+  "short_name": "English Vocabulary",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0f0c29",
-  "theme_color": "#7c5cfc",
+  "theme_color": "#012169",
   "lang": "ar",
   "dir": "rtl",
   "icons": [
