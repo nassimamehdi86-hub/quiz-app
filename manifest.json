@@ -1,0 +1,17 @@
+{
+  "name": "مصطلحات المقطع 1 - 4AM",
+  "short_name": "مصطلحات 1",
+  "description": "شرح + مرادفات + أضداد + روابط - درس صوتي واختبارات تفاعلية",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f0c29",
+  "theme_color": "#7c5cfc",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
