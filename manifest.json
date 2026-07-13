@@ -1,0 +1,27 @@
+{
+  "name": "Sequence 1",
+  "short_name": "Sequence 1",
+  "description": "تطبيق تدريب على مصطلحات وعبارات الرحلات والشخصيات - شرح، مرادفات، أضداد، روابط، وعبارات شائعة",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#00247d",
+  "theme_color": "#00247d",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
